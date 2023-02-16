@@ -1,24 +1,24 @@
-import React from 'react';
 import './App.css';
+import React, { useState } from 'react';
 import Button from './Components/Button/Button';
 import DisplayCount from './Components/DisplayCount/DisplayCount';
-import PostList from './Components/PostList/PostList';
+import CreatePostForm from './Components/CreatePostForm/CreatePostForm';
+
 
 function App() {
+  const [count, setCount] = useState(0)
 
-
-  let postArray = [
-    {'name': "Christian", 'post': "Go Eagles!" },
-    {'name': "Joe", 'post': "Let's get pizza"},
-    {'name': "Vaida", 'post': "I hate football, let's go shopping"}
-  ]
+  function updateClickCount(){
+    let newCount = count + 1
+    setCount(newCount)
+  }
 
   return (
     <div className="App">
       <h1>Socialfeed</h1>
-      <PostList postArray={postArray} />
-      <Button />
-      <DisplayCount />
+      <Button updateClickCount={updateClickCount} />
+      <DisplayCount currentCount={count} />
+      <CreatePostForm />
     </div>
   );
 }
