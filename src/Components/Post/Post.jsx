@@ -1,7 +1,16 @@
 import React from 'react';
- 
+
 const Post = (props) => {
-    return (<p>{props.post.name} {props.post.post}</p>);
+    const [posts, setPosts] = useState('')
+ 
+
+    function addPost(post){
+        let tempPosts = []
+    }
+
+    return ( 
+
+    );
 }
  
 export default Post;
